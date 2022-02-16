@@ -5,9 +5,14 @@ const Content = () => {
   return (
     <div className='content'>
         <div className='contentHeader'>
-            <label>
-                Rooms
-            </label>
+            <div className='contentheadwithtotal'>
+              <label className='contenthead'>
+                  Rooms
+              </label>
+              <p className='contenttotalrooms'>
+                34 Rooms available
+              </p>
+            </div>
             <button> <Add className="add"></Add>Create Room</button>
         </div>
     </div>

@@ -130,11 +130,7 @@ form.searchbar button{
   height: 90%;
   overflow: scroll;
 }
-::-webkit-scrollbar-track{
-  width: 10px;
-}
 ::-webkit-scrollbar{
-  width:10px;
   display: none;
 }
 .sidecontents > .sidecontent{
@@ -174,19 +170,26 @@ form.searchbar button{
   display: flex;
   border-radius: 10px;
   font-family: 'Varela Round', sans-serif;
-  font-size: 30px;
+  font-size: 25px;
   justify-content: space-between;
   align-items: center;
   background-color: #0d1820;
 }
-
-.contentHeader > label{ 
+.contenthead{ 
   margin-left: 20px;
-  margin-bottom: 10px;
+  margin-bottom:0px;
   color:#f1f1f1;
   border-radius: 10px;
 }
-
+.contenttotalrooms{
+  color:#159992;
+  font-size: 15px;
+  margin-left: 20px;
+  margin-top: 0px;
+}
+.contentheadwithtotal{
+  padding-top: 10px;
+}
 .contentHeader > button{
   outline: none;
   border:none;

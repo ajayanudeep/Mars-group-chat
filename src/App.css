@@ -234,3 +234,42 @@ form.searchbar button{
   display: flex;
   border-radius:8px;
 }
+.hosts{
+  display: list-item;
+  overflow: scroll;
+  height: 91%;
+
+}
+.hosts > .host{
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  /* justify-content: center; */
+}
+.hosts > .host > .details > label{
+  padding-left:20px ;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 20px;
+  color: white;
+}
+.hosts > .host > .details > img{
+  height: 22%;
+  width: 22%;
+}
+.hosts > .host > .details {
+  display: flex;
+  align-items: center;
+}
+.hosts > .host  > button{
+  margin-right: 20px;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 16px;
+  outline: none;
+  border: none;
+  color: #0d1820;
+  background-color: #159992;
+  border-radius: 5px;
+  cursor: pointer;
+}

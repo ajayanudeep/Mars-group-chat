@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+.navbar{
+  width: 100%;
+  display:flex;
+  margin-top: 0%;
+  height: 60px;
+  align-items: center;
+  background-color:#0d2944;
+  justify-content: space-between;
+}
+.main{
+  display: flex;
+  height: 707px;
+}
+.box1{
+  width: 43%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0d1820;
+  height: 100%;
+}
+.box2{
+  width: 100%;
+  background-color: #0d1820;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box3{
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0d1820;
+  height: 100%;
+}
+.icon{
+  height: 60px;
+  float: left;
+  margin-left: 30px;
+}
+.user-icon{
+  height: 45px;
+  float: right;
+}
+.header{
+  font-family: 'Varela Round', sans-serif;
+  margin: 0 0 0 15px;
+  color:#FFF3EB;
+  font-size: 35px;
+}
+.login{
+  font-family: 'Varela Round', sans-serif;
+  margin: 0 10px 0 10px;
+  color:#FFF3EB;
+  font-size: 23px;
+  text-decoration: none;
+}
+.header-left{
+  display: flex;
+  align-items: center;
+}
+.header-right{
+  display: flex;
+  align-items: center;
+  margin-right:15px;
+}
+.searchbar{
+  display: flex;
+  align-items: center;
+}
+.search-button{
+  width: 100px;
+  height: 100px;
+}
+form.searchbar input[type=text] {
+  padding: 8px;
+  font-size: 17px;
+  border:none;
+  float: left;
+  width: 300px;
+  background: #f1f1f1;
+  border-radius: 15px;
+  outline:none;
+}
+form.searchbar button{
+  float: left;
+  border-radius: 9px;
+  width: 10%;
+  height: 30px;
+  padding: 0px;
+  background:none;
+  color: white;
+  font-size: 20px;
+  border: none;
+  margin: 0px 0px 0px 0px;
+  cursor: pointer;
+}
+.searchbar{
+  margin-right: 80px;
+}
+.sidepanel{
+  background-color:#0d1820;
+  width: 90%;
+  height: 95%;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #0d2944;
+  border-radius: 10px;
+  display:list-item;
+  
+}
+.sideheader{
+  width: 100%;
+  margin-left: 0px;
+  height: 7%;
+  color: #f9fbfd;
+  background-color: #0d2944;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 25px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border-radius:8px;
+}
+.sidecontents{
+  width: 100%;
+  height: 90%;
+  overflow: scroll;
+}
+::-webkit-scrollbar-track{
+  width: 10px;
+}
+::-webkit-scrollbar{
+  width:10px;
+  display: none;
+}
+.sidecontents > .sidecontent{
+  color:#f1f1f1;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 22px;
+  padding-top: 15px;
+  display: flex;
+  padding-left: 20px;
+  padding-bottom: 10px;
+  justify-content: space-between;
+}
+.sidecontent > button{
+  margin-right: 20px;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 16px;
+  outline: none;
+  border: none;
+  color: #0d1820;
+  background-color: #159992;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.content{
+  display: flex;
+  width: 98%;
+  height: 95%;
+  background-color: #0d1820;
+  border-radius: 10px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #0d2944;
+}
+.contentHeader{
+  width: 100%;
+  height: 10%;
+  display: flex;
+  border-radius: 10px;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 30px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0d1820;
+}
+
+.contentHeader > label{ 
+  margin-left: 20px;
+  margin-bottom: 10px;
+  color:#f1f1f1;
+  border-radius: 10px;
+}
+
+.contentHeader > button{
+  outline: none;
+  border:none;
+  width: 20%;
+  display: flex;
+  align-items: center;
+  height: 50%;
+  color:#0d1820;
+  background-color: #159992;
+  border-radius: 10px;
+  margin-right: 20px;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 17px;
+  cursor: pointer;
+}
+.add{
+  color: #f1f1f1;
+  margin-left: 0px;
+  height: 60%;
+}
+
+.tophosts{
+  background-color: #0d1820;
+  width: 95%;
+  height: 95%;
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #0d2944;
+}
+
+.tophostheader{
+  width: 100%;
+  margin-left: 0px;
+  height: 7%;
+  color: #f9fbfd;
+  background-color: #0d2944;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 25px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border-radius:8px;
+}

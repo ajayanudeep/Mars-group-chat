@@ -13,7 +13,7 @@ function App() {
           <Route exact path='/' element={<Navigate to='/Home' />}></Route>
           <Route path ='/Home' element={<Header />}></Route>
           <Route path='/login' element={<Login />}></Route>
-          <Route path='/chatroom' element={<Chatroom />}></Route>
+          <Route path='/chatroom/:roomname' element={<Chatroom />}></Route>
         </Routes>
     </div>
     </Router>

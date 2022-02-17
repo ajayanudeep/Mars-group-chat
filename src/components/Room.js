@@ -5,7 +5,9 @@ import { ReactComponent as People } from "../assets/people.svg"
 import user from '../assets/user.png'
 import { Link } from 'react-router-dom';
 const Room = ({title}) => {
+    const value = `/chatroom/${title}`
   return (
+
     <div className='room'>
         <div className='owner'>
             <div className='ownerheader'>
@@ -17,7 +19,8 @@ const Room = ({title}) => {
             <p> 4 Weeks ago</p>
         </div>
         <div className='roomdetails'>
-            <Link to='/chatroom' className='link'>{title}</Link>
+            
+            <Link to={value} className='link'>{title}</Link>
             <div className='studentlist'>
                 <img src={studentm} alt="" />
                 <img src={studentw} alt="" />

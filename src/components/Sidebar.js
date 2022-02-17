@@ -3,7 +3,7 @@ import Sidecontent from './Sidecontent'
 const Sidebar = () => {
   return (
     <div className='sidepanel'>
-        <div className='sideheader'>
+        <div className='header'>
             TOPICS
         </div>
         <div className='sidecontents'>

@@ -15,10 +15,10 @@ const Content = () => {
         </button>
       </div>
       <div className="rooms">
-        <Room />
-        <Room />
-        <Room />
-        <Room />
+        <Room title="Nice ra"/>
+        <Room title="Not Nice ra"/>
+        <Room title="Partially Nice ra"/>
+        <Room title="All Nice ra"/>
       </div>
     </div>
   );

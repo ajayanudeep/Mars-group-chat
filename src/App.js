@@ -1,25 +1,22 @@
-import './App.css';
-import Navbar from './components/Navbar'
-import Sidebar from './components/Sidebar'
-import Content from './components/Content'
-import TopHosts from './components/TopHosts'
-
+import "./App.css";
+import Header from "./components/Header";
+import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
+import Login from "./components/Login";
+import Navbar from "./components/Navbar";
+import Chatroom from "./components/Chatroom";
 function App() {
   return (
+    <Router>
     <div className="App">
-      <Navbar></Navbar>
-      <div className='main'>
-        <div className='box1'>
-          <Sidebar></Sidebar>
-        </div>
-        <div className='box2'>
-          <Content></Content>
-        </div>
-        <div className='box3'>
-          <TopHosts></TopHosts>
-        </div>
-      </div>
+        <Navbar />
+        <Routes>
+          <Route exact path='/' element={<Navigate to='/Home' />}></Route>
+          <Route path ='/Home' element={<Header />}></Route>
+          <Route path='/login' element={<Login />}></Route>
+          <Route path='/chatroom' element={<Chatroom />}></Route>
+        </Routes>
     </div>
+    </Router>
   );
 }
 

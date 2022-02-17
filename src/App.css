@@ -1,26 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
-.navbar{
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
+.App {
   width: 100%;
-  display:flex;
+  height: 100%;
+}
+.navbar {
+  width: 100%;
+  display: flex;
   margin-top: 0%;
   height: 60px;
   align-items: center;
-  background-color:#0d2944;
+  background-color: #0d2944;
   justify-content: space-between;
 }
-.main{
+.main {
   display: flex;
   height: 707px;
 }
-.box1{
+.box1 {
   width: 43%;
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   background-color: #0d1820;
   height: 100%;
 }
-.box2{
+.box2 {
   width: 100%;
   background-color: #0d1820;
   height: 100%;
@@ -28,7 +32,7 @@
   justify-content: center;
   align-items: center;
 }
-.box3{
+.box3 {
   width: 40%;
   display: flex;
   justify-content: center;
@@ -36,107 +40,109 @@
   background-color: #0d1820;
   height: 100%;
 }
-.icon{
+.icon {
   height: 60px;
   float: left;
   margin-left: 30px;
 }
-.user-icon{
+.user-icon {
   height: 45px;
   float: right;
 }
-.header > a{
+.header > .link {
   text-decoration: none;
-  font-family: 'Varela Round', sans-serif;
+}
+.header > .link > a {
+  text-decoration: none;
+  font-family: "Varela Round", sans-serif;
   margin: 0 0 0 15px;
-  color:#FFF3EB;
+  color: #fff3eb;
   font-size: 35px;
 }
-.login{
-  font-family: 'Varela Round', sans-serif;
+.login {
+  font-family: "Varela Round", sans-serif;
   margin: 0 10px 0 10px;
-  color:#FFF3EB;
+  color: #fff3eb;
   font-size: 23px;
   text-decoration: none;
 }
-.header-left{
+.header-left {
   display: flex;
   align-items: center;
 }
-.header-right{
+.header-right {
   display: flex;
   align-items: center;
-  margin-right:15px;
+  margin-right: 15px;
 }
-.searchbar{
+.searchbar {
   display: flex;
   align-items: center;
 }
-.search-button{
+.search-button {
   width: 100px;
   height: 100px;
 }
-form.searchbar input[type=text] {
+form.searchbar input[type="text"] {
   padding: 8px;
   font-size: 17px;
-  border:none;
+  border: none;
   float: left;
   width: 300px;
   background: #f1f1f1;
   border-radius: 15px;
-  outline:none;
+  outline: none;
 }
-form.searchbar button{
+form.searchbar button {
   float: left;
   border-radius: 9px;
   width: 10%;
   height: 30px;
   padding: 0px;
-  background:none;
+  background: none;
   color: white;
   font-size: 20px;
   border: none;
   margin: 0px 0px 0px 0px;
   cursor: pointer;
 }
-.searchbar{
+.searchbar {
   margin-right: 80px;
 }
-.sidepanel{
-  background-color:#0d1820;
+.sidepanel {
+  background-color: #0d1820;
   width: 90%;
   height: 95%;
   border-width: 1px;
   border-style: solid;
   border-color: #0d2944;
   border-radius: 10px;
-  display:list-item;
-  
+  display: list-item;
 }
-.sideheader{
+.header {
   width: 100%;
   margin-left: 0px;
   height: 7%;
   color: #f9fbfd;
   background-color: #0d2944;
-  font-family: 'Varela Round', sans-serif;
+  font-family: "Varela Round", sans-serif;
   font-size: 25px;
   justify-content: center;
   align-items: center;
   display: flex;
-  border-radius:8px;
+  border-radius: 8px;
 }
-.sidecontents{
+.sidecontents {
   width: 100%;
   height: 90%;
   overflow: scroll;
 }
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   display: none;
 }
-.sidecontents > .sidecontent{
-  color:#f1f1f1;
-  font-family: 'Varela Round', sans-serif;
+.sidecontents > .sidecontent {
+  color: #f1f1f1;
+  font-family: "Varela Round", sans-serif;
   font-size: 22px;
   padding-top: 15px;
   display: flex;
@@ -144,9 +150,9 @@ form.searchbar button{
   padding-bottom: 10px;
   justify-content: space-between;
 }
-.sidecontent > button{
+.sidecontent > button {
   margin-right: 20px;
-  font-family: 'Varela Round', sans-serif;
+  font-family: "Varela Round", sans-serif;
   font-size: 16px;
   outline: none;
   border: none;
@@ -155,7 +161,7 @@ form.searchbar button{
   border-radius: 5px;
   cursor: pointer;
 }
-.content{
+.content {
   /* display: flex; */
   width: 98%;
   height: 95%;
@@ -165,54 +171,54 @@ form.searchbar button{
   border-style: solid;
   border-color: #0d2944;
 }
-.contentHeader{
+.contentHeader {
   width: 100%;
   height: 10%;
   display: flex;
   border-radius: 10px;
-  font-family: 'Varela Round', sans-serif;
+  font-family: "Varela Round", sans-serif;
   font-size: 25px;
   justify-content: space-between;
   align-items: center;
   background-color: #0d1820;
 }
-.contenthead{ 
+.contenthead {
   margin-left: 20px;
-  margin-bottom:0px;
-  color:#f1f1f1;
+  margin-bottom: 0px;
+  color: #f1f1f1;
   border-radius: 10px;
 }
-.contenttotalrooms{
-  color:#159992;
+.contenttotalrooms {
+  color: #159992;
   font-size: 15px;
   margin-left: 20px;
   margin-top: 0px;
 }
-.contentheadwithtotal{
+.contentheadwithtotal {
   padding-top: 10px;
 }
-.contentHeader > button{
+.contentHeader > button {
   outline: none;
-  border:none;
+  border: none;
   width: 20%;
   display: flex;
   align-items: center;
   height: 50%;
-  color:#0d1820;
+  color: #0d1820;
   background-color: #159992;
   border-radius: 10px;
   margin-right: 20px;
-  font-family: 'Varela Round', sans-serif;
+  font-family: "Varela Round", sans-serif;
   font-size: 17px;
   cursor: pointer;
 }
-.add{
+.add {
   color: #f1f1f1;
   margin-left: 0px;
   height: 60%;
 }
 
-.tophosts{
+.tophosts {
   background-color: #0d1820;
   width: 95%;
   height: 95%;
@@ -222,26 +228,12 @@ form.searchbar button{
   border-color: #0d2944;
 }
 
-.tophostheader{
-  width: 100%;
-  margin-left: 0px;
-  height: 7%;
-  color: #f9fbfd;
-  background-color: #0d2944;
-  font-family: 'Varela Round', sans-serif;
-  font-size: 25px;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  border-radius:8px;
-}
-.hosts{
+.hosts {
   display: list-item;
   overflow: scroll;
   height: 91%;
-
 }
-.hosts > .host{
+.hosts > .host {
   display: flex;
   align-items: center;
   padding-left: 20px;
@@ -249,13 +241,13 @@ form.searchbar button{
   padding-bottom: 10px;
   /* justify-content: center; */
 }
-.hosts > .host > .details > label{
-  padding-left:20px ;
-  font-family: 'Varela Round', sans-serif;
+.hosts > .host > .details > label {
+  padding-left: 20px;
+  font-family: "Varela Round", sans-serif;
   font-size: 20px;
   color: white;
 }
-.hosts > .host > .details > img{
+.hosts > .host > .details > img {
   height: 22%;
   width: 22%;
 }
@@ -263,9 +255,9 @@ form.searchbar button{
   display: flex;
   align-items: center;
 }
-.hosts > .host  > button{
+.hosts > .host > button {
   margin-right: 20px;
-  font-family: 'Varela Round', sans-serif;
+  font-family: "Varela Round", sans-serif;
   font-size: 16px;
   outline: none;
   border: none;
@@ -274,20 +266,20 @@ form.searchbar button{
   border-radius: 5px;
   cursor: pointer;
 }
-.rooms{
-  display: list-item;  
+.rooms {
+  display: list-item;
   justify-content: center;
   overflow: scroll;
   height: 89%;
   border-radius: 10px;
 }
-.room{
+.room {
   width: 98%;
   margin: 9px;
-  background-color: rgba(13, 41, 68,2);
+  background-color: rgba(13, 41, 68, 2);
   border-radius: 10px;
 }
-.rooms > .room > .owner > .ownerheader > img{
+.rooms > .room > .owner > .ownerheader > img {
   height: 40px;
   margin-left: 10px;
   margin-right: 5px;
@@ -295,7 +287,7 @@ form.searchbar button{
   padding-top: 2px;
   border-radius: 75px;
 }
-.rooms > .room > .owner{
+.rooms > .room > .owner {
   justify-content: space-between;
   display: flex;
 }
@@ -303,59 +295,60 @@ form.searchbar button{
   padding-right: 15px;
   color: aqua;
 }
-.rooms > .room > .owner > .ownerheader{
+.rooms > .room > .owner > .ownerheader {
   align-items: center;
   display: flex;
 }
-.rooms > .room > .owner > .ownerheader > .ownerdetail > a{
+.rooms > .room > .owner > .ownerheader > .ownerdetail > a {
   text-decoration: none;
   align-items: center;
-  font-family: 'Varela Round', sans-serif;
+  font-family: "Varela Round", sans-serif;
   font-size: 20px;
-  color:white ;
+  color: white;
   padding-left: 5px;
 }
 .rooms > .room > .roomdetails {
-  margin-left:15px ;
+  margin-left: 15px;
   margin-top: 10px;
   margin-right: 10px;
   /* margin-bottom: 25px; */
   align-items: center;
 }
-.rooms > .room > .roomdetails > label {
+.rooms > .room > .roomdetails > .link {
+  text-decoration: none;
   margin-bottom: 20px;
   color: white;
-  font-family: 'Varela Round', sans-serif;
+  font-family: "Varela Round", sans-serif;
   font-size: 20px;
 }
 
-.rooms > .room > .roomdetails > .studentlist > img{
+.rooms > .room > .roomdetails > .studentlist > img {
   margin-top: 20px;
   height: 5%;
   width: 5%;
   margin-bottom: 10px;
   border-radius: 50px;
 }
-.rooms > .room > .roomdetails > .studentlist > hr{
+.rooms > .room > .roomdetails > .studentlist > hr {
   margin-bottom: 10px;
   background-color: #159992;
   outline: none;
-  border:none;
+  border: none;
   height: 1px;
 }
-.rooms > .room > .roomdetails > .peoplejoined > .number > .people{
+.rooms > .room > .roomdetails > .peoplejoined > .number > .people {
   height: 30px;
   width: 28%;
-  background-color: #10B07B;
+  background-color: #10b07b;
   border-radius: 200px;
   margin-right: 10px;
 }
-.rooms > .room > .roomdetails > .peoplejoined > .number{
+.rooms > .room > .roomdetails > .peoplejoined > .number {
   width: 15%;
   display: flex;
   align-items: center;
 }
-.rooms > .room > .roomdetails > .peoplejoined{
+.rooms > .room > .roomdetails > .peoplejoined {
   display: flex;
   align-items: center;
   padding-bottom: 10px;
@@ -363,8 +356,8 @@ form.searchbar button{
   font-size: 15px;
   justify-content: space-between;
 }
-.rooms > .room > .roomdetails > .peoplejoined > label{
-  background-color: #10B07B;
+.rooms > .room > .roomdetails > .peoplejoined > label {
+  background-color: #10b07b;
   color: #0d2944;
   font-size: 16px;
   width: 70px;
@@ -374,3 +367,28 @@ form.searchbar button{
   justify-content: center;
   margin-right: 10px;
 }
+.chatroom {
+  height: 707px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.chatroom > .chatspace {
+  width: 95%;
+  height: 90%;
+  margin: 10px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #0d2944;
+  border-radius: 10px;
+}
+.chatroom > .participants {
+  margin: 10px;
+  width: 45%;
+  height: 90%;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #0d2944;
+  border-radius: 10px;
+}
+

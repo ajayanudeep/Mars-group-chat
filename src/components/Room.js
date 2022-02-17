@@ -3,7 +3,8 @@ import studentm from '../assets/studentm.png';
 import studentw from '../assets/studentw.png';
 import { ReactComponent as People } from "../assets/people.svg"
 import user from '../assets/user.png'
-const Room = () => {
+import { Link } from 'react-router-dom';
+const Room = ({title}) => {
   return (
     <div className='room'>
         <div className='owner'>
@@ -16,7 +17,7 @@ const Room = () => {
             <p> 4 Weeks ago</p>
         </div>
         <div className='roomdetails'>
-            <label>Come Buddy let's Chat</label>
+            <Link to='/chatroom' className='link'>{title}</Link>
             <div className='studentlist'>
                 <img src={studentm} alt="" />
                 <img src={studentw} alt="" />

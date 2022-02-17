@@ -10,7 +10,7 @@ const Room = () => {
             <div className='ownerheader'>
                 <img src={user} alt="" />
                 <div className='ownerdetail'>
-                    Mahesh
+                   <a href="">Mahesh</a>
                 </div>
             </div>
             <p> 4 Weeks ago</p>

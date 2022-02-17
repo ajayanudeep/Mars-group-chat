@@ -45,7 +45,8 @@
   height: 45px;
   float: right;
 }
-.header{
+.header > a{
+  text-decoration: none;
   font-family: 'Varela Round', sans-serif;
   margin: 0 0 0 15px;
   color:#FFF3EB;
@@ -306,7 +307,8 @@ form.searchbar button{
   align-items: center;
   display: flex;
 }
-.rooms > .room > .owner > .ownerheader > .ownerdetail{
+.rooms > .room > .owner > .ownerheader > .ownerdetail > a{
+  text-decoration: none;
   align-items: center;
   font-family: 'Varela Round', sans-serif;
   font-size: 20px;

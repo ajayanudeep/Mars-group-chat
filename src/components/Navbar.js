@@ -7,7 +7,9 @@ const Navbar = () => {
     <nav className='navbar'>
         <div className='header-left'>
             <img src={groupicon} className="icon" />
-            <h2 className='header'>Mars</h2>
+            <h2 className='header'>
+                <a href="">Mars</a>
+            </h2>
         </div>
         <form className='searchbar'>
             <input type="text" placeholder='search' />

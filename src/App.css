@@ -131,6 +131,7 @@ form.searchbar button {
   align-items: center;
   display: flex;
   border-radius: 8px;
+  
 }
 .sidecontents {
   width: 100%;
@@ -392,3 +393,25 @@ form.searchbar button {
   border-radius: 10px;
 }
 
+.chatroom > .chatspace > .chatspaceheader {
+  width: 100%;
+  margin-left: 0px;
+  height: 7%;
+  color: #f9fbfd;
+  background-color: #0d2944;
+  font-family: "Varela Round", sans-serif;
+  font-size: 25px;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  border-radius: 8px;
+  
+}
+.chatroom > .chatspace > .chatspaceheader > .headercontent {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+.chatroom > .chatspace > .chatspaceheader > .headercontent > .link{
+  margin: 10px;
+}

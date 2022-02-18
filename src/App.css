@@ -382,19 +382,23 @@ form.searchbar button {
   width: 95%;
   height: 90%;
   margin: 10px;
+  margin-left: 10%;
   border-width: 1px;
   border-style: solid;
   border-color: #0d2944;
   border-radius: 10px;
+  background-color: #4d5c66;
 }
 .chatroom > .participants {
   margin: 10px;
+  margin-right: 10%;
   width: 45%;
   height: 90%;
   border-width: 1px;
   border-style: solid;
   border-color: #0d2944;
   border-radius: 10px;
+  background-color: #4d5c66;
 }
 
 .chatroom > .chatspace > .chatspaceheader {
@@ -422,7 +426,7 @@ form.searchbar button {
 
 .chatroom > .participants > .participantsdetails{
   overflow: scroll;
-  height: 90%;
+  height: 91%;
 }
 
 .chatroom > .participants > .participantsdetails > .participant > .details > img {
@@ -444,4 +448,62 @@ form.searchbar button {
   color: white;
   height: 89%;
   border-radius: 10px;
+}
+
+.chatroom > .chatspace > .chatspacedetails {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 2px;
+}
+
+.chatroom > .chatspace > .chatspacedetails > .chatspacedetailsheader {
+  justify-content: center;
+  margin-top: 10px;
+  align-items: center;
+  /* display: flex; */
+}
+.chatroom > .chatspace > .chatspacedetails > .chatspacedetailsheader > .details {
+  display: flex;
+  justify-content: space-between;
+}
+.chatroom > .chatspace > .chatspacedetails > .chatspacedetailsheader > .details > label{
+  /* margin-left: 20px; */
+  font-family: "Varela Round", sans-serif;
+  font-size: 25px;
+  color: white;
+}
+.chatroom > .chatspace > .chatspacedetails > .chatspacedetailsheader > .details >button{
+  /* margin-left: 75%; */
+  border-radius: 15px;
+  background-color: red;
+  height: 25px;
+  width: 15%;
+}
+.chatroom > .chatspace > .chatspacedetails > .chatspacedetailsheader > .about  > .host > img{
+  height: 4%;
+  width: 4%;
+}
+
+.chatroom > .chatspace > .chatspacedetails > .chatspacedetailsheader > .about{
+  justify-content: center;
+  align-items: center;
+  display: block;
+}
+.chatroom > .chatspace > .chatspacedetails > .chatspacedetailsheader > .about > .host{
+  justify-content:left;
+  align-items: center;
+  display: flex;
+}
+
+.chatroom > .chatspace > .chatspacedetails > .chatspacedetailsheader > .about  > .host > label{
+  font-family: "Varela Round", sans-serif;
+  font-size: 25px;
+  color:white;
+  margin-left: 5px;
+}
+.chatroom > .chatspace > .chatspacedetails > .chats{
+  background-color: #0d2944;
+  border-radius: 5px;
+  height: 400px;
+  width: 100%;
 }

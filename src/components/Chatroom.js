@@ -5,6 +5,7 @@ import backarrow from '../assets/backarrow.svg'
 import Participant from './Participant';
 import studentm from '../assets/studentm.png'
 import studentw from '../assets/studentw.png'
+import user from '../assets/user.png'
 const Chatroom = (props) => {
     let {roomname} = useParams();
   return (
@@ -16,6 +17,26 @@ const Chatroom = (props) => {
                             <Link to="/Home" className='link'><img src={backarrow} alt=""/></Link>
                             <label htmlFor="">{roomname}</label>
                         </div>
+                    </div>
+                    <div className='chatspacedetails'>
+                        <div className='chatspacedetailsheader'>
+                            <div className='details'>
+                                <label>{roomname}</label>
+                                <button>Join</button>
+                            </div>
+                            <div className='about'>
+                                <p style={{color:'white'}}>4 months ago</p>
+                                <div className='host'>
+                                    <img src={user} alt="" />
+                                    <label htmlFor="">Mahesh</label>
+                                </div>
+                                <p style={{color:'Yellow'}}>NOTE: Room will only display 25 most recent messages while this website is still in beta.</p>
+                            </div>
+                        </div>
+                        <div className='chats'>
+                            nice ra
+                        </div>
+                        
                     </div>
                 </div>
                 <div className='participants'>

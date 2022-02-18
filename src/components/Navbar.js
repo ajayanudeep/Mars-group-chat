@@ -16,8 +16,8 @@ const Navbar = () => {
             <button type='submit' className='search-button'><i class="fa fa-search"></i></button>
         </form>
         <div className='header-right'>
-            <img src={user} className="user-icon"/>
-            <a href="/login" className='login'>Login</a>
+            <Link to='/login'><img src={user} className="user-icon"/></Link>
+            <Link to="/login" className='login'>Login</Link>
         </div>
     </nav>
 )

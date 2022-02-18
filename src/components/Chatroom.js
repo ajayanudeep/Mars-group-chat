@@ -5,7 +5,7 @@ import Participant from './Participant';
 import studentm from '../assets/studentm.png';
 import studentw from '../assets/studentw.png';
 import user from '../assets/user.png';
-import {ReactComponent as Send} from '../assets/send.svg';
+import {ReactComponent as Send} from '../assets/sendicon.svg';
 import { useState } from 'react';
 const Chatroom = (props) => {
     let {roomname} = useParams();
@@ -18,6 +18,10 @@ const Chatroom = (props) => {
                             <Link to="/Home" className='link'><Backarrow /></Link>
                             <label htmlFor="">{roomname}</label>
                         </div>
+                        <div className='host'>
+                            <img src={user} alt="" />
+                            <label htmlFor="">Mahesh</label>
+                        </div>
                     </div>
                     <div className='chatspacedetails'>
                         <div className='chatspacedetailsheader'>
@@ -27,10 +31,6 @@ const Chatroom = (props) => {
                             </div>
                             <div className='about'>
                                 <p style={{color:'white'}}>4 months ago</p>
-                                <div className='host'>
-                                    <img src={user} alt="" />
-                                    <label htmlFor="">Mahesh</label>
-                                </div>
                             </div>
                         </div>
                         <div className='chats'>

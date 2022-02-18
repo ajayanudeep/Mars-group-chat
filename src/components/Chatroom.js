@@ -1,10 +1,12 @@
 import React from 'react'
 import { useParams, Link } from 'react-router-dom';
-import backarrow from '../assets/backarrow.svg'
+import {ReactComponent as Backarrow} from '../assets/backarrow.svg';
 import Participant from './Participant';
-import studentm from '../assets/studentm.png'
-import studentw from '../assets/studentw.png'
-import user from '../assets/user.png'
+import studentm from '../assets/studentm.png';
+import studentw from '../assets/studentw.png';
+import user from '../assets/user.png';
+import {ReactComponent as Send} from '../assets/send.svg';
+import { useState } from 'react';
 const Chatroom = (props) => {
     let {roomname} = useParams();
   return (
@@ -13,7 +15,7 @@ const Chatroom = (props) => {
                 <div className='chatspace'> 
                     <div className='chatspaceheader'>
                         <div className='headercontent'>
-                            <Link to="/Home" className='link'><img src={backarrow} alt=""/></Link>
+                            <Link to="/Home" className='link'><Backarrow /></Link>
                             <label htmlFor="">{roomname}</label>
                         </div>
                     </div>
@@ -29,13 +31,15 @@ const Chatroom = (props) => {
                                     <img src={user} alt="" />
                                     <label htmlFor="">Mahesh</label>
                                 </div>
-                                <p style={{color:'Yellow'}}>NOTE: Room will only display 25 most recent messages while this website is still in beta.</p>
                             </div>
                         </div>
                         <div className='chats'>
-                            nice ra
+                            Nice
                         </div>
-                        
+                        <div className='entryfield'>
+                            <input type="text" placeholder='Type something'/>
+                            <Send className='send'></Send>
+                        </div>
                     </div>
                 </div>
                 <div className='participants'>

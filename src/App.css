@@ -422,6 +422,12 @@ form.searchbar button {
 }
 .chatroom > .chatspace > .chatspaceheader > .headercontent > .link{
   margin: 10px;
+  fill:#159992;
+}
+.chatroom > .chatspace > .chatspaceheader > .headercontent > .link > img{
+  margin: 10px;
+  border-radius: 10px;
+  width: 60%;
 }
 
 .chatroom > .participants > .participantsdetails{
@@ -460,6 +466,7 @@ form.searchbar button {
   justify-content: center;
   margin-top: 10px;
   align-items: center;
+  margin-bottom: 15px;
   /* display: flex; */
 }
 .chatroom > .chatspace > .chatspacedetails > .chatspacedetailsheader > .details {
@@ -473,11 +480,20 @@ form.searchbar button {
   color: white;
 }
 .chatroom > .chatspace > .chatspacedetails > .chatspacedetailsheader > .details >button{
-  /* margin-left: 75%; */
-  border-radius: 15px;
-  background-color: red;
-  height: 25px;
-  width: 15%;
+  outline: none;
+  /* border:#f1f1f1; */
+  width: 20%;
+  display: flex;
+  align-items: center;
+  height: 50%;
+  color: #0d1820;
+  background-color: #159992;
+  border-radius: 10px;
+  margin-right: 20px;
+  font-family: "Varela Round", sans-serif;
+  font-size: 17px;
+  cursor: pointer;
+  justify-content: center;
 }
 .chatroom > .chatspace > .chatspacedetails > .chatspacedetailsheader > .about  > .host > img{
   height: 4%;
@@ -506,4 +522,19 @@ form.searchbar button {
   border-radius: 5px;
   height: 400px;
   width: 100%;
+}
+
+.chatroom > .chatspace > .chatspacedetails > .entryfield{
+  display: flex;
+  margin-top: 7px;
+}
+.chatroom > .chatspace > .chatspacedetails > .entryfield > input{
+  width : 95%;
+  height: 25px;
+  margin-right: 5px;
+  border-radius: 5px;
+}
+.chatroom > .chatspace > .chatspacedetails > .entryfield > .send:hover{
+  fill:#159992;
+  cursor: pointer;
 }

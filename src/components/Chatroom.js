@@ -5,8 +5,10 @@ import Participant from './Participant';
 import studentm from '../assets/studentm.png';
 import studentw from '../assets/studentw.png';
 import user from '../assets/user.png';
+import Message from './Message'
 import {ReactComponent as Send} from '../assets/sendicon.svg';
 import { useState } from 'react';
+
 const Chatroom = (props) => {
     let {roomname} = useParams();
   return (
@@ -30,11 +32,16 @@ const Chatroom = (props) => {
                                 <button>Join</button>
                             </div>
                             <div className='about'>
-                                <p style={{color:'white'}}>4 months ago</p>
+                                <p style={{color:'white'}}>Created 4 months ago</p>
                             </div>
                         </div>
                         <div className='chats'>
-                            Nice
+                            <Message />
+                            <Message />
+                            <Message />
+                            <Message />
+                            <Message />
+                            <Message />
                         </div>
                         <div className='entryfield'>
                             <input type="text" placeholder='Type something'/>

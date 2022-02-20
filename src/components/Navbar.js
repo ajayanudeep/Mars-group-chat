@@ -29,7 +29,7 @@ const Navbar = () => {
                 :
                 <>
                 <img src={user} className="user-icon"/>
-                <Link to="" className='login'>Profile</Link>
+                <Link to="/profile" className='login'>Profile</Link>
                 </>
             }
         </div>

@@ -680,3 +680,23 @@ form.searchbar button {
   opacity: 0.5;
   margin-right: 20px;
 }
+.profile{
+  width: 70%;
+  margin-left: 15%;
+  margin-top: 3%;
+  height:600px;
+  color: #f3f4f5;
+  background-color:#0d1820;
+  border-radius: 10px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #0d2944;
+}
+.profile > .profilepic >img {
+  height: 200px;
+}
+.profile > .profilepic {
+  display: flex;
+  margin-top: 20px;
+  justify-content: center;
+}

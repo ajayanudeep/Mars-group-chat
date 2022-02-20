@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import Chatroom from "./components/Chatroom";
 import Login from "./components/Login";
 import Roomcreation from "./components/Roomcreation";
+import Profile from "./components/Profile";
 function App() {
   return (
     <Router>
@@ -18,6 +19,7 @@ function App() {
           <Route path='/login' element={<Login />}></Route>
           <Route path='/chatroom/:roomname' element={<Chatroom />}></Route>
           <Route path='/createroom' element={<Roomcreation />}></Route>
+          <Route path='/profile' element={<Profile />}></Route>
         </Routes>
     </div>
     </Router>

@@ -1,29 +1,25 @@
-import React from 'react'
+import React, { useState,useEffect } from 'react'
 import Sidecontent from './Sidecontent'
+
 const Sidebar = () => {
+  const [topics,setTopics] = useState([])
+  const gettopics = async () => {
+    let response = await fetch('http://127.0.0.1:8000/topics/');
+    let data = await response.json();
+    setTopics(data);
+  }
+  useEffect(() => {
+    gettopics(); 
+  },[])
   return (
     <div className='sidepanel'>
         <div className='header'>
             TOPICS
         </div>
         <div className='sidecontents'>
-            <Sidecontent name = "MongoDB"/>
-            <Sidecontent name = "Express JS"/>
-            <Sidecontent name = "React"/>
-            <Sidecontent name = "Node JS"/>
-            <Sidecontent name = "Python"/>
-            <Sidecontent name = "C++"/>
-            <Sidecontent name = "Java"/>
-            <Sidecontent name = "C"/>
-            <Sidecontent name = "C#"/>
-            <Sidecontent name = "R"/>
-            <Sidecontent name = "SQL"/>
-            <Sidecontent name = "JavaScript"/>
-            <Sidecontent name = "Oracle"/>
-            <Sidecontent name = "Kotlin"/>
-            <Sidecontent name = "Dart"/>
-            <Sidecontent name = "Swift"/>
-            <Sidecontent name = "Flutter"/>
+            {topics.map((val) => {
+                return <Sidecontent val = {val}/>
+            })}
         </div>
     </div>  
 )

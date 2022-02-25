@@ -1,29 +1,26 @@
-import React from "react";
+import React, { useState,useEffect } from "react";
 import Host from "./Host";
 import man from "../assets/man.png";
 import woman from "../assets/woman.png";
 import woman2 from "../assets/woman2.png";
 import man2 from '../assets/man2.png'
 const TopHosts = () => {
+  const [users,setUsers] = useState([])
+  const getusers = async () => {
+    let response = await fetch('http://127.0.0.1:8000/users/');
+    let data = await response.json();
+    setUsers(data);
+  }
+  useEffect(() => {
+    getusers(); 
+  },[])
   return (
     <div className="tophosts">
       <div className="header">Top Hosts</div>
       <div className="hosts">
-          <Host icon={man} name = "Ajay"></Host>
-          <Host icon={woman} name = "Rithika"></Host>
-          <Host icon={man2} name = "Sethu"></Host>
-          <Host icon={woman2} name = "Dedheepya"></Host>
-          <Host icon={woman} name = "Akshaya"></Host>
-          <Host icon={woman2} name = "Pooja"></Host>
-          <Host icon={man2} name = "Sagar"></Host>
-          <Host icon={man} name = "Mahesh"></Host>
-          <Host icon={man} name = "Akshay"></Host>
-          <Host icon={woman} name = "Uma"></Host>
-          <Host icon={man} name = "Hemanth"></Host>
-          <Host icon={woman} name = "Priyanka"></Host>
-          <Host icon={man} name = "Rushiketh"></Host>
-          <Host icon={woman} name = "Kanchan"></Host>
-
+          {users.map((val) => {
+              return <Host val = {val}/>
+          })}
       </div>
     </div>
   );

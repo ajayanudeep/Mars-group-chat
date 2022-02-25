@@ -7,14 +7,16 @@ import Chatroom from "./components/Chatroom";
 import Login from "./components/Login";
 import Roomcreation from "./components/Roomcreation";
 import Profile from "./components/Profile";
+import { useState } from "react";
 function App() {
+  const [searchterm,setSearchterm] = useState('');
   return (
     <Router>
     <div className="App">
-        <Navbar />
+        <Navbar setterm={setSearchterm} />
         <Routes>
           <Route exact path='/' element={<Navigate to='/Home' />}></Route>
-          <Route path ='/Home' element={<Header />}></Route>
+          <Route path ='/Home' element={<Header topic={searchterm} />}></Route>
           <Route path='/signup' element={<Signup />}></Route>
           <Route path='/login' element={<Login />}></Route>
           <Route path='/chatroom/:roomname' element={<Chatroom />}></Route>

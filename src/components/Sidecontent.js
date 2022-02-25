@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Sidecontent = (props) => {
+const Sidecontent = ({val}) => {
   return (
     <div className='sidecontent'>
-            <label>{props.name}</label>
+            <label>{val.name}</label>
             <button>Follow</button>
     </div>
   )

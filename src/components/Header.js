@@ -4,7 +4,7 @@ import Sidebar from "./Sidebar";
 import Content from "./Content";
 import TopHosts from "./TopHosts";
 
-const Header = () => {
+const Header = ({topic}) => {
   return (
     <div>
       <div className="main">
@@ -12,7 +12,7 @@ const Header = () => {
           <Sidebar></Sidebar>
         </div>
         <div className="box2">
-          <Content></Content>
+          <Content searchterm={topic}></Content>
         </div>
         <div className="box3">
           <TopHosts></TopHosts>

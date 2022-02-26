@@ -27,10 +27,10 @@ const Content = ({searchterm}) => {
       </div>
       <div className="rooms">
         {rooms.filter((val) => {
-                if(searchterm == ""){
+                if(searchterm === ""){
                     return val
                 }
-                else if(val.name.toLowerCase().includes(searchterm.toLowerCase())){
+                else if(val.name.toLowerCase().includes(searchterm.toLowerCase()) || val.description.toLowerCase().includes(searchterm.toLowerCase())){
                     return val
                 }
             }).map((val) => {

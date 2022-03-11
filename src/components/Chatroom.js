@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom';
 import {ReactComponent as Backarrow} from '../assets/backarrow.svg';
 import Participant from './Participant';
@@ -9,11 +9,25 @@ import Message from './Message'
 import {ReactComponent as Send} from '../assets/sendicon.svg';
 import { useState } from 'react';
 
-const Chatroom = (props) => {
+const Chatroom = () => {
     let {roomname} = useParams();
-  return (
-      <div>
-          <div className='chatroom'>
+    const [rooms,setRooms] = useState(null);
+    const [room,setRoom]=useState(null);
+    const getroom = async () => {
+        let response = await fetch('http://127.0.0.1:8000/rooms/');
+        let data = await response.json();
+        setRooms(data);
+    }
+    useEffect (async ()=>{
+        await getroom();
+        if(rooms){
+            setRoom(rooms.find(e => e.name===roomname))
+        }
+        console.log(room);
+    },[])
+    return (
+        <div>
+            <div className='chatroom'>
                 <div className='chatspace'> 
                     <div className='chatspaceheader'>
                         <div className='headercontent'>
@@ -74,7 +88,7 @@ const Chatroom = (props) => {
             </div>
       </div>
     
-  )
+    )
 }
 
 export default Chatroom

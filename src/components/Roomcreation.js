@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useState,useEffect } from "react";
 import Select from "react-select";
 import { useNavigate } from "react-router-dom";
+import AuthContext from "../context/AuthContext";
 const Roomcreation = () => {
-  const [user, setUser] = useState();
+  const [userer, setUser] = useState();
   const [topic_selected, setTopicselected] = useState();
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
+
+  let {user} = useContext(AuthContext)
+
   const history = useNavigate();
   let create = async (room) => {
     await fetch(`http://localhost:8000/create_room/`,{
@@ -17,41 +21,37 @@ const Roomcreation = () => {
       body:JSON.stringify(room)
     })
   }
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const host = user.value;
+    console.log(user.user_id)
+    console.log(topics)
+    const host = user.user_id;
     const topic = topics.find( e => e.name===topic_selected.value).id
-    create({host,topic,name,description})
+    await create({host,topic,name,description})
+    console.log(host)
+    console.log(user)
     history('/')
   };
-  const [topics,setTopics] = useState([])
+  const [topics,setTopics] = useState()
+  const [loading,setLoading] = useState(true);
   const gettopics = async () => {
     let response = await fetch('http://127.0.0.1:8000/topics/');
     let data = await response.json();
-    setTopics(data);
-  }
-  const [users,setUsers] = useState([])
-  const getusers = async () => {
-    let response = await fetch('http://127.0.0.1:8000/users/');
-    let data = await response.json();
-    setUsers(data);
+    await setTopics(data);
+
   }
   const [topiclist,setTopiclist]=useState([]);
-  const [userlist,setUserlist]=useState([]);
   useEffect(() => {
     gettopics();
-    getusers();
-    setTopiclist(topics.map((val)=>{
+    setTopiclist(topics?.map((val)=>{
           return {value:val.name,label:val.name}
     }))
-    setUserlist(users.map((val)=>{
-          return {value:val.id,label:val.id}
-    }))
-    console.log("Hi")
   },[name])
+  if(!topics){
+    return <h1>Loading...</h1>
+  }
   return (
     <div className="login-form">
-      {console.log(userlist)}
       <form onSubmit={handleSubmit} className="form">
         <div className='formheader'>
             Create Room
@@ -63,12 +63,6 @@ const Roomcreation = () => {
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder="Enter Room Name"
-          />
-        </div>
-        <div className="field">
-          <label>Enter Host</label>
-          <Select className="select" options={userlist}
-            onChange={setUser}
           />
         </div>
         <div className="field">

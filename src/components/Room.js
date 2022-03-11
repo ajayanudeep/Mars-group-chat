@@ -21,7 +21,7 @@ const Room = ({val}) => {
             <div className='ownerheader'>
                 <img src={user} alt="" />
                 <div className='ownerdetail'>
-                   <a href="">{}</a>
+                   <a href="">{val.host}</a>
                 </div>
             </div>
             <p> {val.created}</p>

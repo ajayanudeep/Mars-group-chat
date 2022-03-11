@@ -1,13 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { ReactComponent as Add } from "../assets/add.svg";
 import Room from "./Room";
 import { Link } from "react-router-dom";
+import AuthContext from "../context/AuthContext";
 const Content = ({searchterm}) => {
   const [rooms,setRooms] = useState([])
+  let {authtoken,logoutUser} = useContext(AuthContext);
   const getrooms = async () => {
-    let response = await fetch('http://127.0.0.1:8000/rooms/');
+    let response = await fetch('http://127.0.0.1:8000/rooms/',{
+      method:'GET',
+      headers:{
+        'Content-Type':'application/json',
+        'Authorization':'Bearer '+String(authtoken.access)
+      }
+    });
     let data = await response.json();
-    setRooms(data);
+    if(response.status ===200){
+      setRooms(data);
+    }
+    else if(response.statusText==='Unauthorized'){
+      logoutUser()
+    }
   }
   useEffect(() => {
     getrooms();

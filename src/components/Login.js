@@ -1,28 +1,27 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
+import AuthContext from '../context/AuthContext';
 const Login = () => {
-  const [email,setEmail] = useState('');
-  const [password,setPassword] = useState('');
+  let { loginUser } = useContext(AuthContext);
+  let [username,setUsername] = useState(null);
+  let [password,setPassword] = useState(null);
   const history = useNavigate();
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const user = {email,password};
-    console.log(user)
-    history('/')
+  const handleSubmit = () => {
+    loginUser()
   }
   return (
     <div className='login-form'>
-        <form onSubmit={handleSubmit} className='form'>
+        <form onSubmit={ loginUser } className='form'>
           <div className='formheader'>
             Log In
           </div>
           <div className='field'>
-            <label>Email</label>
-            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Enter a valid email'/>
+            <label>Username</label>
+            <input type="username" name="username" value={username} onChange={(e) => setUsername(e.target.value)} placeholder='Enter a valid username'/>
           </div>
           <div className='field'>
             <label>Password</label>
-            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder='Enter password' />
+            <input type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder='Enter password' />
           </div>
           <button type='submit' >Log in</button>
           <p>Don't have an  account? <Link to='/signup' className='link'>Sign up</Link></p>

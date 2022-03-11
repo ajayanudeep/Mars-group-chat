@@ -65,6 +65,7 @@
   color: #fff3eb;
   font-size: 20px;
   text-decoration: none;
+  cursor: pointer;
 }
 .header-left {
   display: flex;
@@ -78,7 +79,7 @@
 .searchbar {
   display: flex;
   align-items: center;
-  position: fixed;
+  position: absolute;
   margin-left: 23%;
 }
 .search-button {

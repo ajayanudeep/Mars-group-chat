@@ -1,21 +1,19 @@
 import React from 'react'
 import user from '../assets/user.png'
 
-const Message = () => {
+const Message = ({message,userer}) => {
   return (
-    <div className='message'>
-        <hr />
+    <div className={`${userer.username!=message.messager ? "messagereceived" : "messagesent"}`}>
         <div className='details'>
             <div className='user'>
-                <img src={user} alt="" />
-                <label >User</label>
+                <label >{userer.username!=message.messager?message.messager:"You"}</label>
             </div>
             <div className='time'>
-                Sent at 13:09
+                {message.created}
             </div>
         </div>
         <div className='actualmessage'>
-            Message
+            {message.body}
         </div>
         
     </div>

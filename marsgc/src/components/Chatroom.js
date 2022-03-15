@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom';
 import {ReactComponent as Backarrow} from '../assets/backarrow.svg';
 import Participant from './Participant';
@@ -8,25 +8,66 @@ import user from '../assets/user.png';
 import Message from './Message'
 import {ReactComponent as Send} from '../assets/sendicon.svg';
 import { useState } from 'react';
+import AuthContext from '../context/AuthContext';
+import ReactScrollableFeed from 'react-scrollable-feed';
 
 const Chatroom = () => {
     let {roomname} = useParams();
-    const [rooms,setRooms] = useState(null);
-    const [room,setRoom]=useState(null);
-    const getroom = async () => {
+    let {user} = useContext(AuthContext)
+    const [room,setRoom]=useState([]);
+    const [room_id,setRoomid] = useState(room?.id)
+    const [message,setMessage] = useState(null)
+
+    const getrooms = async () => {
         let response = await fetch('http://127.0.0.1:8000/rooms/');
         let data = await response.json();
-        setRooms(data);
-    }
-    useEffect (async ()=>{
-        await getroom();
-        if(rooms){
-            setRoom(rooms.find(e => e.name===roomname))
+        if(response.status ===200){
+          setRoom(data.find(e=>e.name===roomname))
+          setRoomid(data.find(e=>e.name === roomname).id)
         }
-        console.log(room);
+    }
+    let add_message = async (message) => {
+        await fetch(`http://localhost:8000/create_message/`,{
+          method: 'POST',
+          headers:{
+            'Content-Type':'application/json'
+          },
+          body:JSON.stringify(message)
+        })
+    }
+    const new_message = async (e) => {
+        e.preventDefault()
+        const messager = user.user_id;
+        const body = message;
+        const room_in = room.id;
+        await add_message({body,messager,room_in})
+        document.getElementById('inputfield').value=''
+        get_room()
+    }
+    const [room_messages,setRoommessages] = useState(null)
+    const get_room = async () => {
+        let response = await fetch(`http://127.0.0.1:8000/get_room/${room_id}`);
+        let data = await response.json();
+        if(response.status ===200){
+            setRoommessages(data)
+        }
+    }
+    useEffect(() => {
+        const timer = setTimeout(() => get_room(),5000);
+        return () => clearTimeout(timer);
+    }, [get_room]);
+    useEffect( () => {
+        getrooms()
     },[])
-    return (
-        <div>
+    useEffect(()=>{
+        get_room()
+    },[room_id])
+    if(room==[] || room_messages==null){
+        return <h1 style={{color:"white"}}>Loading...</h1>
+    }
+    else{
+        return (
+            <div>
             <div className='chatroom'>
                 <div className='chatspace'> 
                     <div className='chatspaceheader'>
@@ -36,7 +77,7 @@ const Chatroom = () => {
                         </div>
                         <div className='host'>
                             <img src={user} alt="" />
-                            <label htmlFor="">Mahesh</label>
+                            <label htmlFor="">{room.host}</label>
                         </div>
                     </div>
                     <div className='chatspacedetails'>
@@ -46,20 +87,21 @@ const Chatroom = () => {
                                 <button>Join</button>
                             </div>
                             <div className='about'>
-                                <p style={{color:'white'}}>Created 4 months ago</p>
+                                <p style={{color:'white'}}>{room.created}</p>
                             </div>
                         </div>
                         <div className='chats'>
-                            <Message />
-                            <Message />
-                            <Message />
-                            <Message />
-                            <Message />
-                            <Message />
+                            <ReactScrollableFeed>
+                                {
+                                room_messages.map((body)=>
+                                    {return <Message message={body} userer={user}/>}
+                                    )
+                                }
+                            </ReactScrollableFeed>
                         </div>
                         <div className='entryfield'>
-                            <input type="text" placeholder='Type something'/>
-                            <Send className='send'></Send>
+                            <textarea type="text" id='inputfield' onChange={(e) => setMessage(e.target.value)} placeholder='Type something'/>
+                            <Send onClick={new_message} className='send'></Send>
                         </div>
                     </div>
                 </div>
@@ -89,6 +131,7 @@ const Chatroom = () => {
       </div>
     
     )
+  }
 }
 
 export default Chatroom

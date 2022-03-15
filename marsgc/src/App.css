@@ -371,7 +371,9 @@ form.searchbar button {
   background-color: #10b07b;
   color: #0d2944;
   font-size: 16px;
-  width: 70px;
+  width: auto;
+  padding-left:5px;
+  padding-right:5px;
   height: 25px;
   border-radius: 100px;
   display: flex;
@@ -486,7 +488,6 @@ form.searchbar button {
   justify-content: space-between;
 }
 .chatroom > .chatspace > .chatspacedetails > .chatspacedetailsheader > .details > label{
-  /* margin-left: 20px; */
   font-family: "Varela Round", sans-serif;
   font-size: 25px;
   color: white;
@@ -498,7 +499,7 @@ form.searchbar button {
   display: flex;
   align-items: center;
   height: 30px;
-  color: #2E475E;
+  color: #101011;
   background-color: #159992;
   border-radius: 20px;
   margin-right: 10px;
@@ -525,9 +526,9 @@ form.searchbar button {
   margin-left: 5px;
 }
 .chatroom > .chatspace > .chatspacedetails > .chats{
-  background-color: #313246;
+  background-color: #0d1820;
   border-radius: 5px;
-  height: 445px;
+  height: 440px;
   width: 100%;
   overflow: scroll;
 }
@@ -535,17 +536,36 @@ form.searchbar button {
 .chatroom > .chatspace > .chatspacedetails > .entryfield{
   display: flex;
   margin-top: 7px;
+  float: right;
+  width:99%;
 }
-.chatroom > .chatspace > .chatspacedetails > .entryfield > input{
+.chatroom > .chatspace > .chatspacedetails > .entryfield > textarea{
   width : 95%;
-  height: 31px;
+  height: 33px;
   margin-right: 5px;
   border-radius: 5px;
   border:none;
+  resize: none;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
 }
+.chatroom > .chatspace > .chatspacedetails > .entryfield > textarea::-webkit-input-placeholder{
+  font-size: 15px;
+  font-family: "Varela Round", sans-serif;
+  padding-top: 5px;
+}
+
+.chatroom > .chatspace > .chatspacedetails > .entryfield > textarea:focus{
+  outline-style: groove;
+  outline-width: 3px;
+  outline-color: #33cce0;
+}
+
 .chatroom > .chatspace > .chatspacedetails > .entryfield > .send{
   cursor: pointer;
-  height: 34px;
+  height: 39px;
+  margin-right: 9px;
   transform: rotate(90deg);
 }
 .form{
@@ -654,41 +674,88 @@ form.searchbar button {
   margin-top: 10px;
   height: 30px;
 }
-.message{
+.messagereceived{
   padding-top: 5px;
   margin: 10px;
+  background-color:#274D54;
+  border-radius: 15px;
+  display: grid;
+  height: 17%;
+  width:50%;
 }
-.message > .details {
+.messagesent{
+  padding-top: 5px;
+  margin: 10px;
+  background-color:#04303a;
+  border-radius: 15px;
+  display: grid;
+  height: 17%;
+  width:50%;
+  position: relative;
+  left: 48%;
+}
+.messagereceived > .details {
   align-items:center;
   display: flex;
-  padding: 5px;
+  padding: 0px;
   justify-content: space-between;
+  margin-left: 10px;
 }
-.message > .details > .user{
+.messagesent > .details {
+  align-items:center;
+  display: flex;
+  padding: 0px;
+  justify-content: space-between;
+  margin-left: 10px;
+}
+.messagereceived > .details > .user{
   display: flex;
   align-items: center;
-  
 }
-.message > .details > .user > img{
-  height: 5%;
-  width: 5%;
+.messagesent > .details > .user{
+  display: flex;
+  align-items: center;
 }
-.message > .details > .user > label{
+.messagereceived > .details > .user > label{
   margin-left: 5px;
   font-family: "Varela Round", sans-serif;
   font-size: 18px;
-  color: cyan;
+  color:#e0d316;
 }
-.message > .actualmessage{
+.messagesent > .details > .user > label{
+  margin-left: 5px;
+  font-family: "Varela Round", sans-serif;
+  font-size: 18px;
+  color: rgb(28, 248, 230);
+}
+.messagereceived > .actualmessage{
   padding: 5px;
   padding-bottom: 0px;
   font-family: "Varela Round", sans-serif;
   margin: 2px;
+  margin-left: 40px;
   font-size: 20px;
   color: white;
-  margin-bottom: 0px;
+  margin-bottom: 10px;
 }
-.message > .details .time{
+.messagesent > .actualmessage{
+  padding: 5px;
+  padding-bottom: 0px;
+  font-family: "Varela Round", sans-serif;
+  margin: 2px;
+  margin-left: 40px;
+  font-size: 20px;
+  color: white;
+  margin-bottom: 10px;
+}
+.messagereceived > .details .time{
+  font-family: "Varela Round", sans-serif;
+  font-size: 15px;
+  color: #ffffff;
+  opacity: 0.5;
+  margin-right: 20px;
+}
+.messagesent > .details .time{
   font-family: "Varela Round", sans-serif;
   font-size: 15px;
   color: white;

@@ -19,15 +19,6 @@ export const AuthProvider = ({children}) => {
 
     async function loginUser(e){
         e.preventDefault();
-        let response1 = await fetch('http://127.0.0.1:8000/users/');
-        let data1 = await response1.json();
-        setUsers(data1);
-        let response2 = await fetch('http://127.0.0.1:8000/topics/');
-        let data2 = await response2.json();
-        setTopics(data1);
-        let response3 = await fetch('http://127.0.0.1:8000/rooms/');
-        let data3 = await response3.json();
-        setRooms(data3);
         let response = await fetch(`http://localhost:8000/token/`,{
             method: 'POST',
             headers:{
@@ -37,15 +28,10 @@ export const AuthProvider = ({children}) => {
         })
         let data = await response.json();
         if(response.status===200){
-            setUser(jwt_decode(data.access))
             setAuthtoken(data)
-            console.log(users)
-            console.log(topics)
-            console.log(rooms)
+            setUser(jwt_decode(data.access))
             localStorage.setItem('authtokens',JSON.stringify(data))
-            if(user){
-                history('/')
-            }
+            history('/')
         }
         else{
             alert("can't process the request")
@@ -58,7 +44,6 @@ export const AuthProvider = ({children}) => {
         localStorage.removeItem('authtokens')
     }
     let updateToken = async () => {
-        console.log("Updated")
         let response = await fetch(`http://localhost:8000/token/refresh/`,{
             method: 'POST',
             headers:{
@@ -88,7 +73,7 @@ export const AuthProvider = ({children}) => {
         user:user,
         authtoken:authtoken,
         loginUser:loginUser,
-        logoutUser:logoutUser
+        logoutUser:logoutUser,
     }
 
     useEffect(() => {

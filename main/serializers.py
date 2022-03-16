@@ -23,6 +23,11 @@ class RoomCreateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Room
         fields = ['id','host','topic','name','description','created','updated']
+class RoomParticipantSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Room
+        fields = ['participants']
     
 
 class TopicSerializer(serializers.ModelSerializer):

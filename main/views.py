@@ -4,7 +4,7 @@ from .models import Room, Topic, Message
 from rest_framework.decorators import api_view,permission_classes
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
-from .serializers import RoomSerializer,RoomCreateSerializer,TopicSerializer,MessageSerializer,MessageCreateSerializer,UserSerializer
+from .serializers import RoomParticipantSerializer, RoomSerializer,RoomCreateSerializer,TopicSerializer,MessageSerializer,MessageCreateSerializer,UserSerializer
 from django.contrib.auth.models import User
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
@@ -27,7 +27,6 @@ class MyTokenObtainPairView(TokenObtainPairView):
 
 @api_view(['GET'])
 def get_rooms(request):
-    user=request.user
     rooms = Room.objects.all()
     serializer = RoomSerializer(rooms,many=True)
     return Response(serializer.data)
@@ -69,6 +68,11 @@ def get_topic(request,pk):
 def get_user(request,pk):
     user = User.objects.get(id=pk)
     serializer = UserSerializer(user)
+    return Response(serializer.data)
+@api_view(['GET'])
+def get_room_participants(request,pk):
+    room = Room.objects.get(id=pk)
+    serializer = RoomParticipantSerializer(room)
     return Response(serializer.data)
 
 

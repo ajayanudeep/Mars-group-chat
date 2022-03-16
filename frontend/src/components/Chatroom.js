@@ -17,6 +17,7 @@ const Chatroom = () => {
     const [room,setRoom]=useState([]);
     const [room_id,setRoomid] = useState(room?.id)
     const [message,setMessage] = useState(null)
+    const [users,setUsers] = useState([]);
 
     const getrooms = async () => {
         let response = await fetch('http://127.0.0.1:8000/rooms/');
@@ -24,6 +25,13 @@ const Chatroom = () => {
         if(response.status ===200){
           setRoom(data.find(e=>e.name===roomname))
           setRoomid(data.find(e=>e.name === roomname).id)
+        }
+    }
+    const getusers = async () => {
+        let response = await fetch('http://127.0.0.1:8000/users/');
+        let data = await response.json();
+        if(response.status ===200){
+            setUsers(data)
         }
     }
     let add_message = async (message) => {
@@ -52,17 +60,27 @@ const Chatroom = () => {
             setRoommessages(data)
         }
     }
+    const [participants,setParticipants] = useState([]);
+    const get_room_participants = async () => {
+        let response = await fetch(`http://127.0.0.1:8000/get_room_participants/${room_id}`);
+        let data = await response.json();
+        if(response.status ===200){
+            setParticipants(data)
+        }
+    }
     useEffect(() => {
         const timer = setTimeout(() => get_room(),5000);
         return () => clearTimeout(timer);
     }, [get_room]);
     useEffect( () => {
         getrooms()
+        getusers()
     },[])
     useEffect(()=>{
         get_room()
+        get_room_participants()
     },[room_id])
-    if(room==[] || room_messages==null){
+    if(room==[] || room_messages==null || participants==[] || room_id == undefined){
         return <h1 style={{color:"white"}}>Loading...</h1>
     }
     else{
@@ -110,21 +128,15 @@ const Chatroom = () => {
                         Participants
                     </div>
                     <div className='participantsdetails'>
-                            <Participant name="Mahesh" icon={studentm}></Participant>
-                            <Participant name="papa" icon={studentw}></Participant>
-                            <Participant name="babu" icon={studentm}></Participant>
-                            <Participant name="chinni" icon={studentw}></Participant>
-                            <Participant name="sethu" icon={studentm}></Participant>
-                            <Participant name="girl" icon={studentw}></Participant>
-                            <Participant name="boy" icon={studentm}></Participant>
-                            <Participant name="girl2" icon={studentw}></Participant>
-                            <Participant name="boy2" icon={studentm}></Participant>
-                            <Participant name="girl3" icon={studentw}></Participant>
-                            <Participant name="boy3" icon={studentm}></Participant>
-                            <Participant name="boy4" icon={studentm}></Participant>
-                            <Participant name="girl4" icon={studentw}></Participant>
-                            <Participant name="boy5" icon={studentm}></Participant>
-                            <Participant name="girl5" icon={studentw}></Participant>
+                            {
+                                users.filter((val) => {
+                                    if( participants.participants.includes(val.id)){
+                                        return val
+                                    }
+                                }).map((val) => {
+                                    return <Participant name={val.username} icon={studentm}></Participant>
+                                })
+                            }
                     </div>
                 </div>
             </div>

@@ -1,13 +1,14 @@
 import re
 from .forms import UserRegistrationForm
-from .models import Room, Topic, Message
+from .models import Profile, Room, Topic, Message
 from rest_framework.decorators import api_view,permission_classes
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
-from .serializers import RoomParticipantSerializer, RoomSerializer,RoomCreateSerializer,TopicSerializer,MessageSerializer,MessageCreateSerializer,UserSerializer
+from .serializers import ProfileSerializer, RoomParticipantSerializer, RoomSerializer,RoomCreateSerializer,TopicSerializer,MessageSerializer,MessageCreateSerializer,UserSerializer
 from django.contrib.auth.models import User
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
+
 
 
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
@@ -68,6 +69,11 @@ def get_topic(request,pk):
 def get_user(request,pk):
     user = User.objects.get(id=pk)
     serializer = UserSerializer(user)
+    return Response(serializer.data)
+@api_view(['GET'])
+def get_profile(request,pk):
+    profile = Profile.objects.get(id=pk)
+    serializer = ProfileSerializer(profile)
     return Response(serializer.data)
 @api_view(['GET'])
 def get_room_participants(request,pk):

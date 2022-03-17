@@ -680,7 +680,6 @@ form.searchbar button {
   background-color:#274D54;
   border-radius: 15px;
   display: grid;
-  height: 17%;
   width:50%;
 }
 .messagesent{
@@ -689,7 +688,6 @@ form.searchbar button {
   background-color:#04303a;
   border-radius: 15px;
   display: grid;
-  height: 17%;
   width:50%;
   position: relative;
   left: 48%;

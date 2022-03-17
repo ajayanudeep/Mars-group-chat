@@ -19,7 +19,7 @@ const TopHosts = () => {
       <div className="header">Top Hosts</div>
       <div className="hosts">
           {users.map((val) => {
-              return <Host val = {val}/>
+              return <Host key={val.id} val = {val}/>
           })}
       </div>
     </div>

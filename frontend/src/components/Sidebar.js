@@ -18,7 +18,7 @@ const Sidebar = () => {
         </div>
         <div className='sidecontents'>
             {topics.map((val) => {
-                return <Sidecontent val = {val}/>
+                return <Sidecontent key={val.id} val = {val}/>
             })}
         </div>
     </div>  

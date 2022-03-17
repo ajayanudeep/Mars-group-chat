@@ -112,7 +112,8 @@ const Chatroom = () => {
                             <ReactScrollableFeed>
                                 {
                                 room_messages.map((body)=>
-                                    {return <Message message={body} userer={user}/>}
+                                    {
+                                        return <Message key={body.id} message={body} userer={user}/>}
                                     )
                                 }
                             </ReactScrollableFeed>
@@ -134,7 +135,7 @@ const Chatroom = () => {
                                         return val
                                     }
                                 }).map((val) => {
-                                    return <Participant name={val.username} icon={studentm}></Participant>
+                                    return <Participant key={val.id} name={val.username} icon={studentm}></Participant>
                                 })
                             }
                     </div>

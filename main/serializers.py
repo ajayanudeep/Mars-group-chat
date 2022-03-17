@@ -1,7 +1,7 @@
 from dataclasses import field
 from django.contrib.auth.models import User
 from rest_framework import serializers
-from main.models import Room, Topic,Message
+from main.models import Profile, Room, Topic,Message
 
 class RoomSerializer(serializers.ModelSerializer):
     created = serializers.DateTimeField(read_only=True,format="%d-%m-%Y %H:%M:%S")
@@ -57,3 +57,14 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = '__all__'
+
+
+class ProfileSerializer(serializers.ModelSerializer):
+    profile_pic = serializers.SerializerMethodField()
+
+    class Meta:
+        model = Profile
+        fields = ['user','bio','profile_pic']
+
+    def get_profile_pic(self,obj):
+        return obj.profile_pic.url

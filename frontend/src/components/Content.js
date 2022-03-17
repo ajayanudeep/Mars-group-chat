@@ -47,7 +47,7 @@ const Content = ({searchterm}) => {
                     return val
                 }
             }).map((val) => {
-                return <Room val={val}/>
+                return <Room key={val.id} val={val}/>
         })}
       </div>
     </div>

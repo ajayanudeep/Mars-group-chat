@@ -1,6 +1,8 @@
 from django.contrib import admin
 from django.urls import path
 from . import views
+
+
 from rest_framework_simplejwt.views import (
     TokenRefreshView,
 )
@@ -20,6 +22,7 @@ urlpatterns = [
     path('get_topic/<str:pk>/',views.get_topic),
     path('get_message/<str:pk>/',views.get_message),
     path('get_user/<str:pk>/',views.get_user),
+    path('get_profile/<str:pk>/',views.get_profile),
     path('update_room/<str:pk>/',views.update_room),
     path('update_topic/<str:pk>/',views.update_topic),
     path('update_message/<str:pk>/',views.update_message),

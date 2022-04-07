@@ -17,6 +17,7 @@ urlpatterns = [
     path('create_topic/',views.create_topic),
     path('create_message/',views.create_message),
     path('create_user/',views.create_user),
+    path('create_profile/',views.create_profile),
     path('get_room/<str:pk>/',views.get_room),
     path('get_room_participants/<str:pk>/',views.get_room_participants),
     path('get_topic/<str:pk>/',views.get_topic),

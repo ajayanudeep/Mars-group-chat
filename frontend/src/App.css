@@ -761,10 +761,10 @@ form.searchbar button {
   margin-right: 20px;
 }
 .profile{
-  width: 70%;
-  margin-left: 15%;
+  width: 65%;
+  margin-left: 2%;
   margin-top: 3%;
-  height:600px;
+  height:630px;
   color: #f3f4f5;
   background-color:#0d1820;
   border-radius: 10px;
@@ -772,11 +772,54 @@ form.searchbar button {
   border-style: solid;
   border-color: #0d2944;
 }
-.profile > .profilepic >img {
+.profilepage > .profile > .profilepic >img {
   height: 200px;
+  border-radius: 50%;
 }
-.profile > .profilepic {
+.profilepage > .profile > .profilepic {
   display: flex;
   margin-top: 20px;
+  margin-left: 190px;
   justify-content: center;
+}
+.profilepage > .profile > .profilepic > .fileupload{
+  height: 100%;
+  margin-top: 150px;  
+}
+.profilepage > .profile > .profilepic > .fileupload > input{
+  outline: none;
+  border-radius: 100px;
+  color:white;
+  width: 185px;
+  border-color: #f1f1f1;
+  border-width: 100px;
+  background-color:#101011;
+}
+
+.profilepage > .myrooms{
+  width: 29%;
+  margin-left: 2%;
+  margin-top: 3%;
+  display:block;
+  color: #f3f4f5;
+  background-color:#0d1820;
+  border-radius: 10px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #0d2944;
+}
+.profilepage{
+  display: flex;
+}
+.myroomslist{
+  display:flexbox;
+  margin-left: 10px;
+}
+.myroom{
+  margin-top:10px;
+  background-color: rgba(13, 41, 68, 2);
+  color: black;
+  width: 98%;
+  height:80px;
+  border-radius: 10px;
 }

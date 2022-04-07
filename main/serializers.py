@@ -68,3 +68,7 @@ class ProfileSerializer(serializers.ModelSerializer):
 
     def get_profile_pic(self,obj):
         return obj.profile_pic.url
+class ProfileCreateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Profile
+        fields = '__all__'

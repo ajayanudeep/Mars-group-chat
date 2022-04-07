@@ -4,7 +4,7 @@ from .models import Profile, Room, Topic, Message
 from rest_framework.decorators import api_view,permission_classes
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
-from .serializers import ProfileSerializer, RoomParticipantSerializer, RoomSerializer,RoomCreateSerializer,TopicSerializer,MessageSerializer,MessageCreateSerializer,UserSerializer
+from .serializers import ProfileCreateSerializer, ProfileSerializer, RoomParticipantSerializer, RoomSerializer,RoomCreateSerializer,TopicSerializer,MessageSerializer,MessageCreateSerializer,UserSerializer
 from django.contrib.auth.models import User
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
@@ -108,6 +108,13 @@ def create_user(request):
     if form.is_valid():
         form.save()
     return Response(form.data)
+@api_view(['POST'])
+def create_profile(request):
+    serializer = ProfileCreateSerializer(data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+    return Response(serializer.data)
+
 
 
 

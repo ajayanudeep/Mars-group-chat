@@ -13,7 +13,7 @@ class Topic(models.Model):
 class Profile(models.Model):
     user = models.OneToOneField(User,on_delete=models.CASCADE)
     bio = models.TextField(max_length=300,blank=True)
-    profile_pic = models.ImageField(upload_to = 'profile_pics')
+    profile_pic = models.ImageField(null = True)
 
 class Room(models.Model):
     host = models.ForeignKey(User,on_delete=models.CASCADE,null=True)

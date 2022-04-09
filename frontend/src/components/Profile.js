@@ -3,6 +3,7 @@ import man from '../assets/man.png'
 import AuthContext from '../context/AuthContext'
 import fileupload from '../assets/fileupload.png';
 import MyRoom from './MyRoom';
+import edit from '../assets/edit.png'
 
 
 const Profile = () => {
@@ -11,10 +12,11 @@ const Profile = () => {
   const getprofile = async () => {
     let response = await fetch(`http://127.0.0.1:8000/get_profile/${user.user_id}`);
     let data = await response.json();
-    if(response.status ===200){
+    if(response.status ===200){ 
         setProfile(data)
     }
   }
+  console.log(profile)
   useEffect(()=>{
     getprofile()
   },[])
@@ -28,32 +30,40 @@ const Profile = () => {
           <div className='header'>
               Profile
           </div>
-          <div className='profilepic'>
-              <img src={profile.profile_pic} />
-              <label className='fileupload'>
-                <input type="file" />
-              </label>
-          </div>
-          <div>
-            <label>Name</label>
-            <input type="text"/>
-            <label>Email</label>
-            <input type="email" />
-            <label>Followers</label>
+          <div className='details'>
+            <div className='profilepic'>
+                <img src={profile.profile_pic} />
+                <label className='fileupload' >
+                  <img src={edit} accept=".png, .gif, .jpeg"></img>
+                  <input type="file" />
+                </label>
+            </div>
+            <div className='actualdetails'>
+              <div className='eachdetail'>
+                <label>Name</label>
+                <h3>Ajay</h3>
+              </div>
+              <div className='eachdetail'>
+                <label>Email</label>
+                <h3>mymail@gmail.com</h3>
+              </div>
+              <div className='eachdetail'>
+                <label>Rooms</label>
+                <h3>100</h3>
+              </div>
+              
+            </div>
           </div>
         </div>
+          
+
         <div className="myrooms">
           <div className='header'>
               My Rooms
           </div>
           <div className='myroomslist'>
               <MyRoom />
-              <MyRoom />
-              <MyRoom />
-              <MyRoom />
-              <MyRoom />
-              <MyRoom />
-              <MyRoom />
+              
           </div>
         </div>
     </div>

@@ -772,21 +772,26 @@ form.searchbar button {
   border-style: solid;
   border-color: #0d2944;
 }
-.profilepage > .profile > .profilepic >img {
+.profilepage > .profile > .details >.profilepic >img {
   height: 200px;
   border-radius: 50%;
 }
-.profilepage > .profile > .profilepic {
+.profilepage > .profile > .details >.profilepic {
   display: flex;
   margin-top: 20px;
-  margin-left: 190px;
   justify-content: center;
 }
-.profilepage > .profile > .profilepic > .fileupload{
-  height: 100%;
-  margin-top: 150px;  
+.profilepage > .profile > .details >.profilepic > .fileupload{
+  margin-top: auto;  
+  margin-left: -40px;
 }
-.profilepage > .profile > .profilepic > .fileupload > input{
+.profilepage > .profile > .details >.profilepic > .fileupload > img{
+  border-radius: 20px;
+  background-color:rgb(173, 184, 184);
+  height: 30px;
+  cursor: pointer;
+}
+.profilepage > .profile > .details >.profilepic > .fileupload > input{
   outline: none;
   border-radius: 100px;
   color:white;
@@ -794,6 +799,34 @@ form.searchbar button {
   border-color: #f1f1f1;
   border-width: 100px;
   background-color:#101011;
+  visibility: hidden;
+  width: 5px;
+  
+}
+.profilepage > .profile > .details > .actualdetails{
+  display: block;
+  background-color: #0d2944;
+  align-items: center;
+  align-content: center;
+  margin : auto;
+  width: 78%;
+  height: 10%;
+
+}
+.profilepage > .profile > .details > .actualdetails > .eachdetail{
+  display: grid;
+  justify-content: center;
+  margin: auto;
+}
+.profilepage > .profile > .details > .actualdetails > .eachdetail > label{
+  font-size: larger;
+  display: flex;
+  justify-content: center;
+}
+.profilepage > .profile > .details > .actualdetails > .eachdetail > h3{
+  font-size: larger;
+  display: flex;
+  justify-content: center;
 }
 
 .profilepage > .myrooms{

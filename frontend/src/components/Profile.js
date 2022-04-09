@@ -3,7 +3,8 @@ import man from '../assets/man.png'
 import AuthContext from '../context/AuthContext'
 import fileupload from '../assets/fileupload.png';
 import MyRoom from './MyRoom';
-import edit from '../assets/edit.png'
+import edit from '../assets/edit.png';
+import userimg from '../assets/userimg.png'
 
 
 const Profile = () => {
@@ -32,7 +33,11 @@ const Profile = () => {
           </div>
           <div className='details'>
             <div className='profilepic'>
-                <img src={profile.profile_pic} />
+              {profile.profile_pic ?
+                <img src={profile.profile_pic} />:
+                <img src={userimg}/>
+              }
+                {/* <img src={profile.profile_pic} alt={userimg}/> */}
                 <label className='fileupload' >
                   <img src={edit} accept=".png, .gif, .jpeg"></img>
                   <input type="file" />
@@ -41,17 +46,33 @@ const Profile = () => {
             <div className='actualdetails'>
               <div className='eachdetail'>
                 <label>Name</label>
-                <h3>Ajay</h3>
+                <input type="text" value="Ajay" readOnly/>
               </div>
               <div className='eachdetail'>
                 <label>Email</label>
-                <h3>mymail@gmail.com</h3>
+                <input type="text" value="mymail.gmail.com" readOnly/>
               </div>
               <div className='eachdetail'>
                 <label>Rooms</label>
-                <h3>100</h3>
+                <input type="text" value="100 velu" readOnly/>
               </div>
-              
+            </div>
+            <div className='socialmedia'>
+              <ul>
+                <li>
+                  <a href="#" class="fa fa-facebook" style={{backgroundColor:"#3B5998",border:"0.8px white groove"}}></a>
+                </li>
+                <li>
+                  <a href="#" class="fa fa-linkedin" style={{backgroundColor:"#007bb5",border:"0.8px white groove"}}></a>
+                </li>
+                <li>
+                  <a href="#" class="fa fa-github" style={{backgroundColor:"#000000",border:"0.8px white groove"}}></a>
+                </li>
+                <li>
+                  <a href="#" class="fa fa-instagram" style={{background:" #d6249f",
+                            background: "radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%)",border:"0.8px white groove"}}></a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>

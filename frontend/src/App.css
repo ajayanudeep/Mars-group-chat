@@ -46,8 +46,9 @@
   margin-left: 30px;
 }
 .user-icon {
-  height: 35px;
+  height: 38px;
   float: right;
+  border-radius: 50%;
 }
 .header > .link {
   text-decoration: none;
@@ -780,6 +781,7 @@ form.searchbar button {
   display: flex;
   margin-top: 20px;
   justify-content: center;
+  margin-bottom: 15px;
 }
 .profilepage > .profile > .details >.profilepic > .fileupload{
   margin-top: auto;  
@@ -805,12 +807,13 @@ form.searchbar button {
 }
 .profilepage > .profile > .details > .actualdetails{
   display: block;
-  background-color: #0d2944;
+  background-color:#444554 ;
   align-items: center;
   align-content: center;
   margin : auto;
-  width: 78%;
-  height: 10%;
+  width: 58%;
+  height: 270px;
+  border-radius: 20px;
 
 }
 .profilepage > .profile > .details > .actualdetails > .eachdetail{
@@ -819,14 +822,43 @@ form.searchbar button {
   margin: auto;
 }
 .profilepage > .profile > .details > .actualdetails > .eachdetail > label{
-  font-size: larger;
+  font-size: large;
+  font-family: "Varela Round", sans-serif;
   display: flex;
   justify-content: center;
+  margin-top: 10px;
 }
-.profilepage > .profile > .details > .actualdetails > .eachdetail > h3{
-  font-size: larger;
+
+.profilepage > .profile > .details > .actualdetails > .eachdetail > input{
+  font-size: large;
+  font-family: "Varela Round", sans-serif;
+  outline: none;
+  text-align: center;
+  border-radius: 10px;
+  background-color: hsl(0deg 0% 100%);
+  margin-top: 15px;
+  margin-bottom: 5px;
+
+}
+.profilepage > .profile > .details > .socialmedia > ul{
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+}
+.profilepage > .profile > .details > .socialmedia > ul >li{
+  list-style-type: none;
+  box-shadow: 0px 3px 10px rgba(0,0,0,.25);
+}
+.profilepage > .profile > .details > .socialmedia > ul >li >a{
+  text-decoration: none;
+  font-size: 35px;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  width: 35px;
+  border-radius: 50%;
+}
+.profilepage > .profile > .details > .socialmedia > ul >li :hover{
+  opacity: 0.8;
 }
 
 .profilepage > .myrooms{

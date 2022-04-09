@@ -116,8 +116,6 @@ def create_profile(request):
     return Response(serializer.data)
 
 
-
-
 @api_view(['POST'])
 def update_room(request,pk):
     room=Room.objects.get(id=pk)

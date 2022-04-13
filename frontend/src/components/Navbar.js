@@ -13,7 +13,7 @@ const Navbar = ({setterm}) => {
             setProfile(data)
         }
     }
-    console.log(profile)
+    // console.log(profile)
     useEffect(()=>{
         getprofile()
     },[])

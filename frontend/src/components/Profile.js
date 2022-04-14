@@ -12,7 +12,7 @@ const Profile = () => {
   const [profile,setProfile] = useState({})
   const [ userdetails, setUserDetails] = useState({})
   const [ roomdetails, setRoomdetails] = useState({})
-  let rooms = [];
+  var rooms = [];
   const getprofile = async () => {
     let response = await fetch(`http://127.0.0.1:8000/get_profile/${user.user_id}`);
     let data = await response.json();
@@ -38,13 +38,14 @@ const Profile = () => {
         rooms.push(roomdetails);
       }
     });
-    console.log(rooms);
+    console.log(rooms.length);
   }
   useEffect(()=>{
     getprofile();
     getuser();
     getrooms();
   },[])
+  console.log(rooms)
   if(profile === {} || userdetails === {}){
     return <h1 style={{color:"white"}}>Loading...</h1>
   }
@@ -77,7 +78,7 @@ const Profile = () => {
               </div>
               <div className='eachdetail'>
                 <label>Rooms</label>
-                <input type="text" value={rooms.length} readOnly/>
+                <input type="text" value={rooms.length} readOnly/> 
               </div>
             </div>
             <div className='socialmedia'>
@@ -92,7 +93,7 @@ const Profile = () => {
                   <a href="#" class="fa fa-github" style={{backgroundColor:"#000000",border:"0.8px white groove"}}></a>
                 </li>
                 <li>
-                  <a href="#" class="fa fa-instagram" style={{background:" #d6249f,radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%)",border:"0.8px white groove"}}></a>
+                  <a href="#" class="fa fa-instagram" style={{background:" #d6249f",background:"radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%)",border:"0.8px white groove"}}></a>
                 </li>
               </ul>
             </div>
@@ -105,8 +106,13 @@ const Profile = () => {
               My Rooms
           </div>
           <div className='myroomslist'>
-              <MyRoom />
-              
+            {
+              console.log(rooms)
+              // rooms.forEach(room =>{
+              //   <MyRoom rooms={room} /> 
+              // })
+            }
+              {/* <MyRoom rooms={rooms}/> */}
           </div>
         </div>
     </div>

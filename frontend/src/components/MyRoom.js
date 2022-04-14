@@ -1,9 +1,10 @@
 import React from 'react'
 
-const MyRoom = ({name}) => {
+const MyRoom = ({rooms})=> {
+  console.log(rooms);
   return (
     <div className='myroom'>
-        {name}
+        {rooms.name}
     </div>
   )
 }
